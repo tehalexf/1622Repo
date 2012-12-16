@@ -412,37 +412,37 @@ task usercontrol()
 
         if(vexRT[Ch3] > 126 && vexRT[Ch2] > 126)
         	{
-        		if(SensorValue[leftEncoder] > SensorValue[rightEncoder])
+        	if(SensorValue[leftEncoder] > SensorValue[rightEncoder])
         			motor[port3] = leftdrive*0.8;    //Front Left3
-          		motor[port4] = leftdrive*-0.8; //Back Left2
-              motor[port5] = rightdrive*-1; //Front Right5
+                    motor[port4] = leftdrive*-0.8; //Back Left2
+                    motor[port5] = rightdrive*-1; //Front Right5
         			motor[port2] = rightdrive*-1; //Back Right4
-        	  if(SensorValue[leftEncoder] < SensorValue[rightEncoder])
+        	if(SensorValue[leftEncoder] < SensorValue[rightEncoder])
         			motor[port3] = leftdrive;    //Front Left
-          		motor[port2] = leftdrive*-1; //Back Left
-              motor[port5] = rightdrive*-0.8; //Front Right
+                    motor[port2] = leftdrive*-1; //Back Left
+                    motor[port5] = rightdrive*-0.8; //Front Right
         			motor[port4] = rightdrive*-0.8; //Back Right
-        	  if(SensorValue[leftEncoder] == SensorValue[rightEncoder])
+        	if(SensorValue[leftEncoder] == SensorValue[rightEncoder])
         			motor[port3] = leftdrive;    //Front Left
-          		motor[port2] = leftdrive*-1; //Back Left
-              motor[port5] = rightdrive*-1; //Front Right
+                    motor[port2] = leftdrive*-1; //Back Left
+                    motor[port5] = rightdrive*-1; //Front Right
         			motor[port4] = rightdrive*-1; //Back Right
           }
 
         else if(vexRT[Ch3] > 126 && vexRT[Ch2] < -126)
         	{
-        		if(SensorValue[leftEncoder] > SensorValue[rightEncoder])
-							motor[port3] = rightdrive*-1;    //Front Left3
+            if(SensorValue[leftEncoder] > SensorValue[rightEncoder])
+					motor[port3] = rightdrive*-1;    //Front Left3
         			motor[port4] = rightdrive*-1; //Back Left2
         			motor[port5] = leftdrive*0.8; //Front Righ5t
        				motor[port2] = leftdrive*-0.8; //Back Right4
-        	  if(SensorValue[leftEncoder] < SensorValue[rightEncoder])
-							motor[port3] = rightdrive*-0.8;    //Front Left3
+        	if(SensorValue[leftEncoder] < SensorValue[rightEncoder])
+					motor[port3] = rightdrive*-0.8;    //Front Left3
         			motor[port4] = rightdrive*-0.8; //Back Left2
         			motor[port5] = leftdrive; //Front Righ5t
        				motor[port2] = leftdrive*-1; //Back Right4
-        	  if(SensorValue[leftEncoder] == SensorValue[rightEncoder])
-        	  	motor[port3] = rightdrive*-1;    //Front Left3
+        	if(SensorValue[leftEncoder] == SensorValue[rightEncoder])
+                    motor[port3] = rightdrive*-1;    //Front Left3
         			motor[port4] = rightdrive*-1; //Back Left2
         			motor[port5] = leftdrive; //Front Righ5t
        				motor[port2] = leftdrive*-1; //Back Right4
@@ -496,26 +496,26 @@ task usercontrol()
 
         if(reversefeeder ==1)
             {
-            	feederOn = 3;
-        		}
+            feederOn = 3;
+        	}
 
 
 
 
         if(stopFeeder == 0 && reversefeeder == 0&& pauseFeeder == 0)
         {
-        	feederOn = 1;
+        feederOn = 1;
         }
 
         if(stopFeeder == 0 && reversefeeder == 1&& pauseFeeder == 0)
         {
-        	feederOn = 3;
+        feederOn = 3;
         }
 
         if(stopFeeder == 0 && reversefeeder == 1&& pauseFeeder == 1)
         {
-        	feederOn = 3;
-        	pauseFeeder =0;
+        feederOn = 3;
+        pauseFeeder =0;
         }
 
         if(stopFeeder ==1 && time1(T1) > 200 )
