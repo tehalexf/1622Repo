@@ -186,17 +186,17 @@ task autonomous()
 
 
 void waitForPress()
-															{
-																while(nLCDButtons == 0){} //Wait for Buttonpress
-																wait1Msec(5);
-															}
+	{
+		while(nLCDButtons == 0){} //Wait for Buttonpress
+		wait1Msec(5);
+	}
 
 
 void waitForRelease()
-															{
-																while(nLCDButtons != 0){}
-																wait1Msec(5);
-															}
+	{
+		while(nLCDButtons != 0){}
+		wait1Msec(5);
+	}
 
 
 task usercontrol()
