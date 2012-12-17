@@ -24,116 +24,19 @@ string extensionBattery; //Battery Life Variables
 int extensionvalue = 0; //Drive Train Battery Value
 int feederOn = 0;
 int pauseFeeder = 0;
-int rightdrive = 0,leftdrive = 0,armup = 0,armdown = 0,reversefeeder = 0,stopFeeder = 0;
+int RIGHTDRIVE = 0,LEFTDRIVE = 0,ARMUP = 0,ARMDOWN = 0,REVERSEFEEDER = 0,STOPFEEDER = 0;
 
+//Controller Setup
+//#define x			vexRT[Ch1] //Right Stick Right/Left
+#define x				vexRT[]
+#define RIGHTDRIVE		vexRT[Ch2] //Right Stick Up/Down
+#define LEFTDRIVE		vexRT[Ch3]
 
-void controller_setup()
-{
-	if(controlscheme == 2)
-	{
-		//Controller Setup
-		//2 -Player
-		//First Player
-		//Analog Sticks
-		//					 Function	   Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch1];//   Right Stick Right/Left (+/-)
-		int /*			 */  rightdrive /**/=			/**/vexRT[Ch2];//   Right Stick Up/Down  (+/-)
-		int /*			 */  leftdrive /**/=			/**/vexRT[Ch3];//   Left Stick Up/Down (+/-)
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch4];//   Left Stick Right/Left (+/-)
+#define ARMUP			vexRT[Btn5U]
+#define ARMDOWN			vexRT[Btn5D]
 
-		//Left Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7U];//   Left Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7D];//   Left Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7L];//   Left Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7R];//   Left Gamepad Right
-
-		//Right Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8U];//   Right Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8D];//   Right Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8L];//   Right Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8R];//   Right Gamepad Right
-
-		//Left Shoulder Buttons
-		//					Function	 Reversed?
-		int /*			 */  armup /**/=			/**/vexRT[Btn5U];//   Left Shoulder Up
-		int /*			 */  armdown /**/=			/**/vexRT[Btn5D];//   Left Shoulder Down
-
-			//Right Shoulder Buttons
-		//					Function	 Reversed?
-		int /*			 */  reversefeeder /**/=			/**/vexRT[Btn6U];//   Left Shoulder Up
-		int /*			 */  stopFeeder /**/=			/**/vexRT[Btn6D];//   Left Shoulder Down
-
-		//Second Player
-		//Analog Sticks
-		//					 Function	   Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch1Xmtr2];//   Right Stick Up/Down (+/-)
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch2Xmtr2];//   Right Stick Right/Left (+/-)
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch3Xmtr2];//   Left Stick Up/Down (+/-)
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch4Xmtr2];//   Left Stick Right/Left (+/-)
-
-		//Left Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7U];//   Left Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7D];//   Left Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7L];//   Left Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7R];//   Left Gamepad Right
-
-		//Right Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8U];//   Right Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8D];//   Right Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8L];//   Right Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8R];//   Right Gamepad Right
-
-		//Left Shoulder Buttons
-		//					Function	 Reversed?
-		// int /*			 */  NULL /**/=			/**/vexRT[Btn5UXmtr2];//   Left Shoulder Up
-		// int /*			 */  NULL /**/=			/**/vexRT[Btn6DXmtr2];//   Left Shoulder Down
-
-			//Right Shoulder Buttons
-		//					Function	  Reversed?
-		// int /*			 */  NULL  /**/=			/**/vexRT[Btn5UXmtr2];//   Left Shoulder Up
-		// int /*			 */  NULL  /**/=			/**/vexRT[Btn6DXmtr2];//   Left Shoulder Down
-	}
-	else
-	{
-		//Controller Setup
-		//1 -Player
-		//Analog Sticks
-
-		//					 Function	   Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch1];//   Right Stick Up/Down (+/-)
-		int /*			 */  rightdrive /**/=			/**/vexRT[Ch2];//   Right Stick Right/Left (+/-)
-		int /*			 */  leftdrive /**/=			/**/vexRT[Ch3];//   Left Stick Up/Down (+/-)
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch4];//   Left Stick Right/Left (+/-)
-
-		//Left Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7U];//   Left Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7D];//   Left Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7L];//   Left Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7R];//   Left Gamepad Right
-
-		//Right Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8U];//   Right Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8D];//   Right Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8L];//   Right Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8R];//   Right Gamepad Right
-
-		//Left Shoulder Buttons
-		//					Function	 Reversed?
-		int /*			 */  armup /**/=			/**/vexRT[Btn5U];//   Left Shoulder Up
-		int /*			 */  armdown /**/=			/**/vexRT[Btn5D];//   Left Shoulder Down
-
-			//Right Shoulder Buttons
-		//					Function	 Reversed?
-		int /*			 */  reversefeeder /**/=			/**/vexRT[Btn6U];//   Right Shoulder Up
-		int /*			 */  stopFeeder /**/=			/**/vexRT[Btn6D];//   Right Shoulder Down
-	}
-}
+#define REVERSEFEEDER	vexRT[Btn6U]
+#define STOPFEEDER		vexRT[Btn6D]
 
 //--Motor Mappings--
 //
@@ -252,13 +155,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count = 3; //Switch back to n-1
+							waitForRelease();
+							count = 3; //Switch back to n-1
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count++;
+							waitForRelease();
+							count++;
 						}
 						break;
 					case 1: //Second Choice
@@ -269,13 +172,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count--;
+							waitForRelease();
+							count--;
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count++;
+							waitForRelease();
+							count++;
 						}
 						break;
 					case 2: //Third Choice
@@ -286,13 +189,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count--;
+							waitForRelease();
+							count--;
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count++;
+							waitForRelease();
+							count++;
 						}
 						break;
 					case 3: //Final (4th) Choice
@@ -303,13 +206,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count--;
+							waitForRelease();
+							count--;
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count = 0;
+							waitForRelease();
+							count = 0;
 						}
 						break;
 					default:
@@ -326,34 +229,34 @@ task usercontrol()
 				case 0: //Battery Tester
 					while (nLCDButtons != 2)
 					{
-					//Battery
-					displayLCDString(0, 0, "Primary: ");
-					sprintf(mainBattery, "%1.2f%c", nImmediateBatteryLevel/1000.0,'V'); //Build the value to be displayed
-					displayNextLCDString(mainBattery);
-					//Second
-					displayLCDString(1, 0, "Secondary: ");
-					extensionvalue = (int)(SensorValue[in1]);
-					sprintf(extensionBattery, "%1.2f%c",extensionvalue, 'V');	//Build the value to be displayed
-					displayNextLCDString(extensionBattery);
-					wait1Msec(100);
+						//Battery
+						displayLCDString(0, 0, "Primary: ");
+						sprintf(mainBattery, "%1.2f%c", nImmediateBatteryLevel/1000.0,'V'); //Build the value to be displayed
+						displayNextLCDString(mainBattery);
+						//Second
+						displayLCDString(1, 0, "Secondary: ");
+						extensionvalue = (int)(SensorValue[in1]);
+						sprintf(extensionBattery, "%1.2f%c",extensionvalue, 'V');	//Build the value to be displayed
+						displayNextLCDString(extensionBattery);
+						wait1Msec(100);
 					}
 					break;
 				case 1: //Distance Utility
 					while (nLCDButtons != 2)
 					{
-					//Distance sensor to be put here
+						//Distance sensor to be put here
 					}
 					break;
 				case 2: //Tilt Utility
 					while (nLCDButtons != 2)
 					{
-					//Tilt sensor to be put here
+						//Tilt sensor to be put here
 					}
 					break;
 				case 3: //Fap Utility
 					while (nLCDButtons != 2)
 					{
-					//Something Else Here
+						//Something Else Here
 					}
 					break;
 				default:
@@ -371,24 +274,24 @@ task usercontrol()
 		{
 			if(SensorValue[leftEncoder] > SensorValue[rightEncoder])
 			{
-				motor[port3] = leftdrive*0.8;	//Front Left3
-				motor[port4] = leftdrive*-0.8; //Back Left2
-				motor[port5] = rightdrive*-1; //Front Right5
-				motor[port2] = rightdrive*-1; //Back Right4
+				motor[port3] = LEFTDRIVE*0.8;	//Front Left3
+				motor[port4] = LEFTDRIVE*-0.8; //Back Left2
+				motor[port5] = RIGHTDRIVE*-1; //Front Right5
+				motor[port2] = RIGHTDRIVE*-1; //Back Right4
 			}
 			if(SensorValue[leftEncoder] < SensorValue[rightEncoder])
 			{
-				motor[port3] = leftdrive;	//Front Left
-				motor[port2] = leftdrive*-1; //Back Left
-				motor[port5] = rightdrive*-0.8; //Front Right
-				motor[port4] = rightdrive*-0.8; //Back Right
+				motor[port3] = LEFTDRIVE;	//Front Left
+				motor[port2] = LEFTDRIVE*-1; //Back Left
+				motor[port5] = RIGHTDRIVE*-0.8; //Front Right
+				motor[port4] = RIGHTDRIVE*-0.8; //Back Right
 			}
 			if(SensorValue[leftEncoder] == SensorValue[rightEncoder])
 			{
-				motor[port3] = leftdrive;	//Front Left
-				motor[port2] = leftdrive*-1; //Back Left
-				motor[port5] = rightdrive*-1; //Front Right
-				motor[port4] = rightdrive*-1; //Back Right
+				motor[port3] = LEFTDRIVE;	//Front Left
+				motor[port2] = LEFTDRIVE*-1; //Back Left
+				motor[port5] = RIGHTDRIVE*-1; //Front Right
+				motor[port4] = RIGHTDRIVE*-1; //Back Right
 			}
 		}
 
@@ -396,34 +299,34 @@ task usercontrol()
 		{
 			if(SensorValue[leftEncoder] > SensorValue[rightEncoder])
 			{
-				motor[port3] = rightdrive*-1;	//Front Left3
-				motor[port4] = rightdrive*-1; //Back Left2
-				motor[port5] = leftdrive*0.8; //Front Righ5t
-				motor[port2] = leftdrive*-0.8; //Back Right4
+				motor[port3] = RIGHTDRIVE*-1;	//Front Left3
+				motor[port4] = RIGHTDRIVE*-1; //Back Left2
+				motor[port5] = LEFTDRIVE*0.8; //Front Righ5t
+				motor[port2] = LEFTDRIVE*-0.8; //Back Right4
 			}
 			if(SensorValue[leftEncoder] < SensorValue[rightEncoder])
 			{
-				motor[port3] = rightdrive*-0.8;	//Front Left3
-				motor[port4] = rightdrive*-0.8; //Back Left2
-				motor[port5] = leftdrive; //Front Righ5t
-				motor[port2] = leftdrive*-1; //Back Right4
+				motor[port3] = RIGHTDRIVE*-0.8;	//Front Left3
+				motor[port4] = RIGHTDRIVE*-0.8; //Back Left2
+				motor[port5] = LEFTDRIVE; //Front Righ5t
+				motor[port2] = LEFTDRIVE*-1; //Back Right4
 			}
 			if(SensorValue[leftEncoder] == SensorValue[rightEncoder])
 			{
-				motor[port3] = rightdrive*-1;	//Front Left3
-				motor[port4] = rightdrive*-1; //Back Left2
-				motor[port5] = leftdrive; //Front Righ5t
-				motor[port2] = leftdrive*-1; //Back Right4
+				motor[port3] = RIGHTDRIVE*-1;	//Front Left3
+				motor[port4] = RIGHTDRIVE*-1; //Back Left2
+				motor[port5] = LEFTDRIVE; //Front Righ5t
+				motor[port2] = LEFTDRIVE*-1; //Back Right4
 			}
 		}
 		else
 		{
 			//Left Drivetrain
-			motor[port3] = rightdrive*-1;	//Front Left3
-			motor[port4] = rightdrive*-1; //Back Left2
+			motor[port3] = RIGHTDRIVE*-1;	//Front Left3
+			motor[port4] = RIGHTDRIVE*-1; //Back Left2
 			//Right Drivetrain
-			motor[port5] = leftdrive; //Front Righ5t
-			motor[port2] = leftdrive*-1; //Back Right4
+			motor[port5] = LEFTDRIVE; //Front Righ5t
+			motor[port2] = LEFTDRIVE*-1; //Back Right4
 		}
 
 		//Left Arm
@@ -456,28 +359,28 @@ task usercontrol()
 			motor[port9] = -127;
 		}
 
-		if(reversefeeder ==1)
+		if(REVERSEFEEDER ==1)
 		{
 			feederOn = 3;
 		}
 
-		if(stopFeeder == 0 && reversefeeder == 0&& pauseFeeder == 0)
+		if(STOPFEEDER == 0 && REVERSEFEEDER == 0&& pauseFeeder == 0)
 		{
 			feederOn = 1;
 		}
 
-		if(stopFeeder == 0 && reversefeeder == 1&& pauseFeeder == 0)
+		if(STOPFEEDER == 0 && REVERSEFEEDER == 1&& pauseFeeder == 0)
 		{
 			feederOn = 3;
 		}
 
-		if(stopFeeder == 0 && reversefeeder == 1&& pauseFeeder == 1)
+		if(STOPFEEDER == 0 && REVERSEFEEDER == 1&& pauseFeeder == 1)
 		{
 			feederOn = 3;
 			pauseFeeder =0;
 		}
 
-		if(stopFeeder ==1 && time1(T1) > 200 )
+		if(STOPFEEDER ==1 && time1(T1) > 200 )
 		{
 			if(pauseFeeder == 0)
 			{
