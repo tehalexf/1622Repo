@@ -30,7 +30,7 @@ int rightdrive = 0,leftdrive = 0,armup = 0,armdown = 0,reversefeeder = 0,stopFee
 void controller_setup()
 {
 	if(controlscheme == 2)
-	{	
+	{
 		//Controller Setup
 		//2 -Player
 		//First Player
@@ -229,35 +229,7 @@ task usercontrol()
 
 	while (true) //Actual Executable
 	{
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch1];//   Right Stick Right/Left (+/-)
-		/*			 */  rightdrive /**/=			/**/vexRT[Ch2];//   Right Stick Up/Down  (+/-)
-		/*			 */  leftdrive /**/=			/**/vexRT[Ch3];//   Left Stick Up/Down (+/-)
-		//int /*			 */  NULL /**/=			/**/vexRT[Ch4];//   Left Stick Right/Left (+/-)
-
-		//Left Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7U];//   Left Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7D];//   Left Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7L];//   Left Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn7R];//   Left Gamepad Right
-
-		//Right Gamepad
-		//					Function	 Reversed?
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8U];//   Right Gamepad Up
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8D];//   Right Gamepad Down
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8L];//   Right Gamepad Left
-		//int /*			 */  NULL /**/=			/**/vexRT[Btn8R];//   Right Gamepad Right
-
-		//Left Shoulder Buttons
-		//					Function	 Reversed?
-		/*			 */  armup /**/=			/**/vexRT[Btn5U];//   Left Shoulder Up
-		/*			 */  armdown /**/=			/**/vexRT[Btn5D];//   Left Shoulder Down
-
-		//Right Shoulder Buttons
-		//					Function	 Reversed?
-		/*			 */  reversefeeder /**/=			/**/vexRT[Btn6U];//   Right Shoulder Up
-		/*			 */  stopFeeder /**/=			/**/vexRT[Btn6D];//   Right Shoulder Down
-
+		controller_setup();
 		while(debug == 1) //Enter Debug Mode
 		{
 			bLCDBacklight = true; //Turn on LCD BackLight
