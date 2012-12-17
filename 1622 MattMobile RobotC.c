@@ -24,7 +24,6 @@ string extensionBattery; //Battery Life Variables
 int extensionvalue = 0; //Drive Train Battery Value
 int feederOn = 0;
 int pauseFeeder = 0;
-int RIGHTDRIVE = 0,LEFTDRIVE = 0,ARMUP = 0,ARMDOWN = 0,REVERSEFEEDER = 0,STOPFEEDER = 0;
 
 //Controller Setup
 //#define x			vexRT[Ch1] //Right Stick Right/Left
