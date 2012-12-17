@@ -13,10 +13,11 @@ DO NOT TOUCH
 #pragma userControlDuration(120)
 #include "Vex_Competition_Includes.c"   //Main competition background code...do not modify!
 
+#define DEBUGJUMPER in2
+
 //Progeam Variables
 int controlscheme = 0; //Controller Scheme
 int debug = 0; //Debug Mode
-int debugjumper = in2; //Debug Jumper (Y/N)
 int statusbit = 0; //Controller Type
 string mainBattery; //Main Battery Variable
 string extensionBattery; //Battery Life Variables
@@ -192,7 +193,7 @@ task usercontrol()
 	debug = 0; //Force No Debug
 
 	//Check if Debug Jumper is inserted
-	if(debugjumper == 1)
+	if(DEBUGJUMPER == 1)
 	{
 		debug = 1;
 	}
