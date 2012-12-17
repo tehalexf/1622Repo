@@ -134,7 +134,6 @@ void controller_setup()
 	}
 }
 
-
 //--Motor Mappings--
 //
 //	 Port	   Function					____________________			 _____	 ______
@@ -151,17 +150,11 @@ void controller_setup()
 //									 	---------------------			 -----	 ------
 //											  Base				   Arm (Left)  Arm (Right)
 
-
-
-
-
-
 //Pre-Atonomous Functions
 void pre_auton()
 {
 	bStopTasksBetweenModes = true; //Necessary to have brain manage user created tasks
 }
-
 
 task autonomous()
 {
@@ -182,20 +175,17 @@ task autonomous()
 	}
 }
 
-
 void waitForPress()
 {
 	while(nLCDButtons == 0){} //Wait for Buttonpress
 	wait1Msec(5);
 }
 
-
 void waitForRelease()
 {
 	while(nLCDButtons != 0){}
 	wait1Msec(5);
 }
-
 
 task usercontrol()
 {
@@ -228,9 +218,6 @@ task usercontrol()
 	// One and Two Transmitter = 3
 	// One VEXnet = 8
 	// Two VEXnet = 10
-
-
-
 	//Controller Checks
 	controlscheme = 1; //Two Player Activated
 
@@ -269,8 +256,6 @@ task usercontrol()
 		//					Function	 Reversed?
 		/*			 */  reversefeeder /**/=			/**/vexRT[Btn6U];//   Right Shoulder Up
 		/*			 */  stopFeeder /**/=			/**/vexRT[Btn6D];//   Right Shoulder Down
-
-
 
 		while(debug == 1) //Enter Debug Mode
 		{
@@ -468,15 +453,8 @@ task usercontrol()
 			motor[port2] = leftdrive*-1; //Back Right4
 		}
 
-
-
-
-
-
 		//Left Arm
-
 		//Right Arm
-
 		//feeder Code
 		//Feeder States:
 		//0: Not Intalized
@@ -509,9 +487,6 @@ task usercontrol()
 		{
 			feederOn = 3;
 		}
-
-
-
 
 		if(stopFeeder == 0 && reversefeeder == 0&& pauseFeeder == 0)
 		{
