@@ -137,18 +137,18 @@ void controller_setup()
 
 //--Motor Mappings--
 //
-//	 Port	   Function			  ___________________			  ______	   ______
-//	   1		Left Arm Down		|				   |			|	  |	 |	  |
-//	   2		Front Right Wheel 4  |				   |  2	  7  |	  |	 |	  |  6
-//	   3		Rear Right Wheel	 |		 UP		|			|  UP  |	 |  UP  |
-//	   4		Front Left Wheel	 |				   |			|	  |	 |	  |
-//	   5		Rear Left Wheel	  |				   |			|	  |	 |	  |		8 ---000000000000---  9
-//	   6		Right Arm Up		 |				   |			|	  |	 |	  |
-//	   7		Left Arm Up		  |				   |			|	  |	 |	  |
-//	   8		feeder			   |				   |			|	  |	 |	  |
-//	   9		feeder			   |				   |			|	  |	 |	  |
-//	   10	   Right Arm Down	5  |				   |  3	  1  |	  |	 |	  |  10
-//									 ---------------------			 ------	   ------
+//	 Port	   Function					____________________			 _____	 ______
+//	   1		Left Arm Down			|					|			|	  |	 |	  |
+//	   2		Front Right Wheel 4  	|					|  2	  7 |	  |	 |	  |  	6
+//	   3		Rear Right Wheel	 	|		 UP			|			|  UP |	 | UP |
+//	   4		Front Left Wheel	 	|					|			|	  |	 |	  |
+//	   5		Rear Left Wheel	  		|					|			|	  |	 |	  |		8 ---000000000000---  9
+//	   6		Right Arm Up		 	|					|			|	  |	 |	  |
+//	   7		Left Arm Up		  		|					|			|	  |	 |	  |
+//	   8		feeder			   		|					|			|	  |	 |	  |
+//	   9		feeder			   		|					|			|	  |	 |	  |
+//	   10	   Right Arm Down	5  		|					|  3	  1 |	  |	 |	  |  	10
+//									 	---------------------			 -----	 ------
 //											  Base				   Arm (Left)  Arm (Right)
 
 
