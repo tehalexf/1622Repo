@@ -155,13 +155,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count = 3; //Switch back to n-1
+							waitForRelease();
+							count = 3; //Switch back to n-1
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count++;
+							waitForRelease();
+							count++;
 						}
 						break;
 					case 1: //Second Choice
@@ -172,13 +172,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count--;
+							waitForRelease();
+							count--;
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count++;
+							waitForRelease();
+							count++;
 						}
 						break;
 					case 2: //Third Choice
@@ -189,13 +189,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count--;
+							waitForRelease();
+							count--;
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count++;
+							waitForRelease();
+							count++;
 						}
 						break;
 					case 3: //Final (4th) Choice
@@ -206,13 +206,13 @@ task usercontrol()
 						waitForPress();
 						if(nLCDButtons == leftButton)
 						{
-						waitForRelease();
-						count--;
+							waitForRelease();
+							count--;
 						}
 						else if(nLCDButtons == rightButton)
 						{
-						waitForRelease();
-						count = 0;
+							waitForRelease();
+							count = 0;
 						}
 						break;
 					default:
@@ -229,34 +229,34 @@ task usercontrol()
 				case 0: //Battery Tester
 					while (nLCDButtons != 2)
 					{
-					//Battery
-					displayLCDString(0, 0, "Primary: ");
-					sprintf(mainBattery, "%1.2f%c", nImmediateBatteryLevel/1000.0,'V'); //Build the value to be displayed
-					displayNextLCDString(mainBattery);
-					//Second
-					displayLCDString(1, 0, "Secondary: ");
-					extensionvalue = (int)(SensorValue[in1]);
-					sprintf(extensionBattery, "%1.2f%c",extensionvalue, 'V');	//Build the value to be displayed
-					displayNextLCDString(extensionBattery);
-					wait1Msec(100);
+						//Battery
+						displayLCDString(0, 0, "Primary: ");
+						sprintf(mainBattery, "%1.2f%c", nImmediateBatteryLevel/1000.0,'V'); //Build the value to be displayed
+						displayNextLCDString(mainBattery);
+						//Second
+						displayLCDString(1, 0, "Secondary: ");
+						extensionvalue = (int)(SensorValue[in1]);
+						sprintf(extensionBattery, "%1.2f%c",extensionvalue, 'V');	//Build the value to be displayed
+						displayNextLCDString(extensionBattery);
+						wait1Msec(100);
 					}
 					break;
 				case 1: //Distance Utility
 					while (nLCDButtons != 2)
 					{
-					//Distance sensor to be put here
+						//Distance sensor to be put here
 					}
 					break;
 				case 2: //Tilt Utility
 					while (nLCDButtons != 2)
 					{
-					//Tilt sensor to be put here
+						//Tilt sensor to be put here
 					}
 					break;
 				case 3: //Fap Utility
 					while (nLCDButtons != 2)
 					{
-					//Something Else Here
+						//Something Else Here
 					}
 					break;
 				default:
