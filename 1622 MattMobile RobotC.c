@@ -131,7 +131,6 @@ task usercontrol()
 
 	while (true) //Actual Executable
 	{
-		controller_setup();
 		while(debug == 1) //Enter Debug Mode
 		{
 			bLCDBacklight = true; //Turn on LCD BackLight
