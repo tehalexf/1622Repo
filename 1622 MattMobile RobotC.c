@@ -79,13 +79,13 @@ task autonomous()
 
 void waitForPress()
 {
-	while(nLCDButtons == 0){} //Wait for Buttonpress
+	while(nLCDButtons == 0){Sleep 10;} //Wait for Buttonpress
 	wait1Msec(5);
 }
 
 void waitForRelease()
 {
-	while(nLCDButtons != 0){}
+	while(nLCDButtons != 0){Sleep 10;}
 	wait1Msec(5);
 }
 
