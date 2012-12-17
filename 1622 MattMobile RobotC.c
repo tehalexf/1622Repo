@@ -27,7 +27,6 @@ int pauseFeeder = 0;
 
 //Controller Setup
 //#define x			vexRT[Ch1] //Right Stick Right/Left
-#define x				vexRT[]
 #define RIGHTDRIVE		vexRT[Ch2] //Right Stick Up/Down
 #define LEFTDRIVE		vexRT[Ch3]
 
